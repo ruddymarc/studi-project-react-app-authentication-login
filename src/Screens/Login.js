@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/authenticator';
 
 function Login() {
+  const { signIn } = useAuth();
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const onSubmit = (event) => {
     event.preventDefault();
+    signIn(login, password);
   };
 
   return (
