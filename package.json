@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "api": "json-server -w api/db.json -p 3004 -m api/middlewares/login.js api/middlewares/logout.js"
   },
   "eslintConfig": {
     "extends": [
