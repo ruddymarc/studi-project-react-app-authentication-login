@@ -13,6 +13,7 @@ function AuthProvider({ children }) {
         .login(userCredential)
         .then((loginData) => {
           if (loginData) {
+            window.history.pushState({}, undefined, '/protected')
             window.localStorage.setItem('token', loginData.token)
           }
         })
@@ -22,6 +23,7 @@ function AuthProvider({ children }) {
         .logout()
         .then((logoutData) => {
           if (logoutData) {
+            window.history.pushState({}, undefined, '/')
             window.localStorage.removeItem('token')
           }
         })
